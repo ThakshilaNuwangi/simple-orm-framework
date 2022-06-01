@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See LICENSE.txt in the project root for license information.
  */
 
-package lk.ijse.dep8.annotations;
+package lk.ijse.dep8.orm.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
