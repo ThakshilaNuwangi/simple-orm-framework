@@ -2,6 +2,7 @@ package lk.ijse.dep8.orm;
 
 import lk.ijse.dep8.orm.annotations.Entity;
 import lk.ijse.dep8.orm.exception.InvalidTableException;
+import lk.ijse.dep8.orm.exception.NoConnectionException;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -22,6 +23,13 @@ public class DepSessionFactory {
 
     public DepSessionFactory setConnection(Connection connection) {
         this.connection = connection;
+        return this;
+    }
+
+    public DepSessionFactory build(){
+        if (this.connection == null) {
+            throw new NoConnectionException("Failed to build without a connection");
+        }
         return this;
     }
 }
